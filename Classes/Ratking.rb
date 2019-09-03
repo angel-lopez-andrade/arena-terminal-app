@@ -2,7 +2,7 @@ require_relative("./Enemy")
 
 class Ratking < Enemy
     def initialize
-        super("Ratking", 50)
+        super("Ratking", 55)
         sleep(2)
         puts "The devious underlord, #{@name} has come to battle! #{@name} has #{@health} health!"
         sleep(2)

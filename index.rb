@@ -42,7 +42,7 @@ puts continue_announce("Finally, if you pick the same move as your opponent, you
 puts continue_announce("Your opponent also damages you by the same principles.")
 puts continue_announce("If you're health drops to zero, its game over.")
 puts continue_announce("Now then, it's time to battle! You're first opponent is crowd favorite, Sewer Mutant!")
-sewer_mutant = Sewer_Mutant.new()
+sewer_mutant = Sewer_Mutant.new
 player_turn = true
 while player.health > 0 and sewer_mutant.health > 0
     if player_turn == true
@@ -56,6 +56,7 @@ while player.health > 0 and sewer_mutant.health > 0
         player.attack(move, sewer_mutant.moves[rand(2)], sewer_mutant)
         if sewer_mutant.health <= 0
             puts "#{sewer_mutant.name}'s health is zero or below! #{player.name} wins!"
+            sleep(2)
             break
         end
         player_turn = false
@@ -76,4 +77,85 @@ while player.health > 0 and sewer_mutant.health > 0
         end
         player_turn = true
     end
+end
+puts first_announce("Congratulations on defeating the first opponent! I've restored your health to full!")
+player.health = 100
+puts continue_announce("Next up is the underworld cheese lord, Ratking!")
+ratking = Ratking.new
+player_turn = true
+while player.health > 0 and ratking.health > 0
+    if player_turn == true
+        puts "Your turn!"
+        puts "Input a move! Scissors, Paper or Rock!?"
+        move = gets.chomp.downcase
+        if(move != "scissors" and move!= "paper" and move!= "rock")
+            puts "Wrong input! Scissors, Paper or Rock!?"
+            next
+        end
+        player.attack(move, ratking.moves[rand(2)], ratking)
+        if ratking.health <= 0
+            puts "#{ratking.name}'s health is zero or below! #{player.name} wins!"
+            sleep(2)
+            break
+        end
+        player_turn = false
+    else
+        puts "Enemy turn!"
+        puts "Input a move! Scissors, Paper or Rock!?"
+        move = gets.chomp.downcase
+        if(move != "scissors" and move!= "paper" and move!= "rock")
+            puts "Wrong input! Scissors, Paper or Rock!?"
+            next
+        end
+        ratking.attack(ratking.moves[rand(2)], move, player)
+        if player.health <=0
+            puts "#{player.name}'s health is zero or below! #{ratking.name} wins!"
+            puts "Game over!"
+            puts "Exiting application..."
+            exit
+        end
+        player_turn = true
+    end
+end
+puts first_announce("Congratulations on defeating the second opponent! I've restored your health to full!")
+player.health = 100
+puts continue_announce("Finally, you're up against the arena champion Man Bear Pig!!!")
+man_bear_pig = Man_Bear_Pig.new
+player_turn = true
+while player.health > 0 and man_bear_pig.health > 0
+    if player_turn == true
+        puts "Your turn!"
+        puts "Input a move! Scissors, Paper or Rock!?"
+        move = gets.chomp.downcase
+        if(move != "scissors" and move!= "paper" and move!= "rock")
+            puts "Wrong input! Scissors, Paper or Rock!?"
+            next
+        end
+        player.attack(move, man_bear_pig.moves[rand(2)], man_bear_pig)
+        if man_bear_pig.health <= 0
+            puts "#{man_bear_pig.name}'s health is zero or below! #{player.name} wins!"
+            sleep(2)
+            break
+        end
+        player_turn = false
+    else
+        puts "Enemy turn!"
+        puts "Input a move! Scissors, Paper or Rock!?"
+        move = gets.chomp.downcase
+        if(move != "scissors" and move!= "paper" and move!= "rock")
+            puts "Wrong input! Scissors, Paper or Rock!?"
+            next
+        end
+        man_bear_pig.attack(man_bear_pig.moves[rand(2)], move, player)
+        if player.health <=0
+            puts "#{player.name}'s health is zero or below! #{man_bear_pig.name} wins!"
+            puts "Game over!"
+            puts "Exiting application..."
+            exit
+        end
+        player_turn = true
+    end
+    first_announce("#{player.name} has come out victorious in the arena circuit! Hip Hip Hooray!")
+    continue_announce("Bye now.")
+    puts "Exiting application"
 end

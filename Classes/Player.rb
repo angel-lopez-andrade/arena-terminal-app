@@ -15,11 +15,11 @@ class Player
         dmg = send(move, enemy_move)
         enemy.health -= dmg
         puts "It's #{@name}'s #{move} VS #{enemy.name}'s #{enemy_move}!"
-        sleep(2)
+        sleep(1)
         puts "#{@name} attacks! #{enemy.name} takes #{dmg} dmg!"
-        sleep(2)
+        sleep(1)
         puts "#{enemy.name} is now on #{enemy.health} health."
-        sleep(2)
+        sleep(1)
     end
 end
 
