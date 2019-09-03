@@ -5,11 +5,11 @@ class Enemy
     def initialize
         @name = ""
         @health = 100
-        @moves = []
+        @moves = ["scissors", "paper", "rock"]
         @atk = 0
     end
 
-    def attack(enemy)
-        
+    def attack(move, enemy)
+
     end
 end

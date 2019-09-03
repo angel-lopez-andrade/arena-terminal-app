@@ -1,5 +1,16 @@
-def announce(string)
-    string.colorize(:magenta)
+#use first_announce when the announcer first speaks in a sequence
+def first_announce(string)
+    return string.colorize(:magenta)
+end
+
+#use continue_announce only after a first_announce in sequence or after another continue_announce
+def continue_announce(string)
+    # sleep(2)
+    return string.colorize(:magenta)
+end
+
+def random_move
+    return rand(2)
 end
 
 #same = 10dmg, effective = 20dmg, ineffective = 5dmg
@@ -37,4 +48,8 @@ def rock(opposition)
         dmg = 10
     end
     return dmg
+end
+
+def battle #calls spr
+
 end
