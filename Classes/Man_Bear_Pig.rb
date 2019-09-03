@@ -2,7 +2,7 @@ require_relative("./Enemy")
 
 class Man_Bear_Pig < Enemy
     def initialize
-        super("Man Bear Pig", 75)
+        super("Man Bear Pig", 60)
         sleep(2)
         puts "The Arena champion, #{@name} has finally emerged! #{@name} has #{@health} health!"
         sleep(2)
@@ -11,7 +11,7 @@ class Man_Bear_Pig < Enemy
     end
 
     def attack(move, enemy_move, enemy)
-        battlecries = ["I am Man Bear Pig!", "Half Man, Half Bear, Half Pig!", "Be it via hands, claws or trotters, I will emerge victorius!", "I am a South Park reference by the way!"]
+        battlecries = ["I am Man Bear Pig!", "Half Man, Half Bear, Half Pig!", "Be it via hands, claws or trotters, I will emerge victorius!", "The holy trinity will slay!"]
         super(move, enemy_move, enemy, battlecries[rand(battlecries.length)].colorize(:yellow))
     end
 end

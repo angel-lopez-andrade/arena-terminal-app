@@ -2,7 +2,7 @@ require_relative("./Enemy")
 
 class Sewer_Mutant < Enemy
     def initialize
-        super("Sewer Mutant", 35)
+        super("Sewer Mutant", 25)
         sleep(2)
         puts "#{@name} comes crawling out of the floor! #{@name} has #{@health} health!"
         sleep(2)
