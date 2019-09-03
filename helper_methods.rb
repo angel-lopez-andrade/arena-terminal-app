@@ -49,7 +49,3 @@ def rock(opposition)
     end
     return dmg
 end
-
-def battle #calls spr
-
-end
