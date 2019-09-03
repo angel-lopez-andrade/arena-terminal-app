@@ -1,3 +1,5 @@
+require_relative("../helper_methods")
+
 class Enemy
     attr_accessor(:health)
     attr_reader(:name, :moves)

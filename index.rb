@@ -40,8 +40,9 @@ puts continue_announce("If your move beats the opponents, it is considered 'effe
 puts continue_announce("If your move is beaten by your opponents, it is 'ineffective' you only inflict a measly 5 damage.")
 puts continue_announce("Finally, if you pick the same move as your opponent, you simply deal 10 damage.")
 puts continue_announce("Your opponent also damages you by the same principles.")
+puts continue_announce("Note that only one person can attack and do damage per turn. The other simply picks a move to defend with.")
 puts continue_announce("If you're health drops to zero, its game over.")
-puts continue_announce("Now then, it's time to battle! You're first opponent is crowd favorite, Sewer Mutant!")
+puts continue_announce("Now then, it's time to battle! You have 100 health and you're first opponent is crowd favorite, Sewer Mutant!")
 sewer_mutant = Sewer_Mutant.new
 player_turn = true
 while player.health > 0 and sewer_mutant.health > 0
@@ -78,7 +79,7 @@ while player.health > 0 and sewer_mutant.health > 0
         player_turn = true
     end
 end
-puts first_announce("Congratulations on defeating the first opponent! I've restored your health to full!")
+puts first_announce("Congratulations on defeating the first opponent! I've restored your health back to 100!")
 player.health = 100
 puts continue_announce("Next up is the underworld cheese lord, Ratking!")
 ratking = Ratking.new
@@ -117,7 +118,7 @@ while player.health > 0 and ratking.health > 0
         player_turn = true
     end
 end
-puts first_announce("Congratulations on defeating the second opponent! I've restored your health to full!")
+puts first_announce("Congratulations on defeating the second opponent! I've restored your health back to 100!")
 player.health = 100
 puts continue_announce("Finally, you're up against the arena champion Man Bear Pig!!!")
 man_bear_pig = Man_Bear_Pig.new
@@ -155,7 +156,9 @@ while player.health > 0 and man_bear_pig.health > 0
         end
         player_turn = true
     end
-    first_announce("#{player.name} has come out victorious in the arena circuit! Hip Hip Hooray!")
-    continue_announce("Bye now.")
-    puts "Exiting application"
 end
+puts first_announce("#{player.name} has come out victorious in the arena circuit! Hip Hip Hooray!")
+puts continue_announce("Bye now.")
+sleep(2)
+puts "Exiting application..."
+exit
