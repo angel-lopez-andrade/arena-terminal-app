@@ -1,5 +1,6 @@
 require "colorize"
-require_relative("./methods")
+require_relative("./helper_methods")
+require_relative("Classes/Player")
 
 #terminal argument checker
 if ARGV.length != 1
@@ -13,6 +14,6 @@ elsif ARGV[0].length < 3 or ARGV[0].length > 9
     puts "Exiting application."
 end
 
-player_name = ARGV[0].capitalize
-puts announce("Welcome to the arena, #{player_name}.")
+player = Player.new(ARGV[0].capitalize)
+puts announce("Welcome to the arena, #{player.name}.")
 puts announce("I am the announcer. I speak in purple.")

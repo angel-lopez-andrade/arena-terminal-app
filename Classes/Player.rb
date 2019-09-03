@@ -1,10 +1,10 @@
-class Enemy
+class Player
     attr_accessor(:health)
     attr_reader(:name, :moves, :atk)
 
-    def initialize
-        @name = ""
-        @health = 100
+    def initialize(name, health)
+        @name = name
+        @health = health
         @moves = []
         @atk = 0
     end
