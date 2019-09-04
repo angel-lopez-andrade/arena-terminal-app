@@ -160,7 +160,6 @@ while player.health > 0 and man_bear_pig.health > 0
     end
 end
 puts first_announce("#{player.name} has come out victorious in the arena circuit! Hip Hip Hooray!")
-puts continue_announce("Bye now.")
 sleep(2)
 puts "Exiting application..."
 exit
