@@ -163,4 +163,5 @@ end
 puts Announcer.first_announce("#{player.name} has come out victorious in the arena circuit! Hip Hip Hooray!")
 sleep(2)
 puts "Exiting application..."
+sleep(2)
 exit
