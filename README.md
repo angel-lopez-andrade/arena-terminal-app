@@ -1,2 +1,2 @@
 # Terminal Application - Arena Game
-This arena-based, Scissors, Paper, Rock logic-influenced fighting game was built to run on the terminal. The game can be run by navigating to the main game directory in your terminal, and then typing in 'ruby index.rb your_username'. 
+This arena-based, Scissors, Paper, Rock logic-influenced fighting game was built to run on the terminal. The game can be run by navigating to the main game directory in your terminal, and then typing in 'ruby index.rb your_username'. For further instructions, please consult the help file located within this directory.
