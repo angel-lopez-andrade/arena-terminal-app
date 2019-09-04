@@ -14,7 +14,11 @@ rescue
     puts "Default name set to \"Player1\""
     ARGV[0] = "Player1"
 end
-
+open("username_history.txt", "a") { |file|
+    if ARGV[0] != "Player1"
+        file << "#{ARGV[0]}\n"
+    end
+}
 player = Player.new(ARGV[0].capitalize)
 ARGV.clear
 puts first_announce("Welcome to the arena, #{player.name}.")
