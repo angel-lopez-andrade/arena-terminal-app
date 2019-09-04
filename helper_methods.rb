@@ -1,14 +1,3 @@
-#use first_announce when the announcer first speaks in a sequence
-def first_announce(string)
-    return string.colorize(:magenta)
-end
-
-#use continue_announce only after a first_announce in sequence or after another continue_announce
-def continue_announce(string)
-    sleep(2)
-    return string.colorize(:magenta)
-end
-
 def random_move
     return rand(2)
 end

@@ -1,5 +1,6 @@
 require "colorize"
 require_relative("./helper_methods")
+require_relative("Classes/Announcer")
 require_relative("Classes/Player")
 require_relative("Classes/Sewer_Mutant")
 require_relative("Classes/Ratking")
