@@ -5,18 +5,16 @@ require_relative("Classes/Sewer_Mutant")
 require_relative("Classes/Ratking")
 require_relative("Classes/Man_Bear_Pig")
 
-#terminal argument checker
-if ARGV.length != 1
-    puts "Wrong number of arguments."
-    puts "Exactly one argument - player name, required at launch."
-    puts "Exiting application..."
-    exit
-elsif ARGV[0].length < 3 or ARGV[0].length > 9
-    puts "Player name too long or too short."
-    puts "Please input a name between 3 and 8 characters"
-    puts "Exiting application..."
-    exit
+begin
+    if ARGV[0].length < 3 or ARGV[0].length > 9
+        raise
+    end
+rescue
+    puts "Name outside of length limit (minimum 3 and maximum 8)."
+    puts "Default name set to \"Player1\""
+    ARGV[0] = "Player1"
 end
+
 player = Player.new(ARGV[0].capitalize)
 ARGV.clear
 puts first_announce("Welcome to the arena, #{player.name}.")

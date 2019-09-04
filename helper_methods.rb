@@ -5,7 +5,7 @@ end
 
 #use continue_announce only after a first_announce in sequence or after another continue_announce
 def continue_announce(string)
-    # sleep(2)
+    sleep(2)
     return string.colorize(:magenta)
 end
 
