@@ -1,5 +1,0 @@
-3/9/2019 12:50PM
-Encountered an issue in trying to use 'gets' after providing command line arguments. The program would come up with an error in that it seemed as it gets was undefined. As I noticed that the player name that I inputted was part of the error message, I did a bit of fiddling around, and I found out that gets, as a method that takes an input and presumably puts that input back as an argument into the program to display it to the screen, was confused by the existing argument in the ARGV array. The issue was solved by clearing ARGV of command line arguments (after using them), with 'ARGV.clear'.
-
-4/9/2019 9AM
-Came across an obstacle in that I needed to receive an unknown string (either "scissors", "rock" or "paper") and then call methods with the exact same name as that string(scissors, rock and paper). Received advice on Ruby's 'send' method - where we figured out that you need to call send with the string-to-be-called-as-a-method as its first argument, and that methods' own arguments as the second and further arguments of 'send'.
